@@ -1,0 +1,94 @@
+h1{
+    font-size: 64px;
+    font-family:sans-serif;
+    color: rgb(12, 12, 12);
+    font-weight: bold;
+    margin: 0px!important;
+}
+h2{
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(12, 12, 12);
+    margin: 0px!important;
+}
+h3{
+    font-size: 24px;
+    color: #0262E0;
+    margin: 0px!important;
+}
+p{
+    font-size: 16px;
+    color: #5B5D5E;
+    margin: 0px!important;
+}
+h4{
+    font-size: 12px;
+    color: white;
+    margin: 0px!important;
+}
+.flex{
+    display: flex;
+}
+.justify-content{
+    justify-content: center;
+}
+.flex-direction{
+    flex-direction: column;
+}
+.align-item{
+    align-items: center;
+}
+.box{
+    padding:0  100px;
+}
+.section-space{
+    padding: 50px 0;
+}
+.row-gap-15{
+    row-gap:15px ;
+}
+.row-gap-10{
+    row-gap:10px ;
+}
+.row-gap-20{
+    row-gap:20px ;
+}
+.column-gap-10{
+    column-gap: 10px;
+}
+.column-gap-20{
+    column-gap: 20px;
+}
+.column-gap-50{
+    column-gap: 50px;
+}
+.white{
+    color: white;
+}
+.black{
+    color: black;
+}
+.bg{
+    background-color: #f7f7f7;
+}
+.gradient-overlay{
+    background-image:linear-gradient(to right,#2d4f8f7a, #ff480036);
+
+}
+.banner-h2{
+    font-size: 36px;
+    color: white;
+    font-weight: 600;
+    
+}
+.banner-h3{
+    font-size: 26px;
+    color: white;
+    font-weight: 500;
+}
+.grid-container{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}

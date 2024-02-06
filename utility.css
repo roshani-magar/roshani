@@ -105,3 +105,12 @@ h4{
     color: white;
     border: 1px solid #0262E0;
 }
+.column-gap-30{
+    column-gap: 30px;
+}
+.row-gap-50{
+    row-gap: 50px;
+}
+.justify-content-sb{
+    justify-content: space-between;
+}

@@ -92,3 +92,16 @@ h4{
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
 }
+.outline-button{
+    border: 1px solid #F64602;
+    border-radius: 10px;
+    color: #F64602;
+    padding: 10px 20px;
+    background-color: white;
+    font-weight: 500;
+}
+.outline-button:hover{
+    background-color: #0262E0;
+    color: white;
+    border: 1px solid #0262E0;
+}

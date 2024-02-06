@@ -142,3 +142,30 @@ border-bottom: 1px solid #DDE0E5!important ;
     text-align: left;
     border-bottom: 1px solid rgb(150, 119, 108);
 }
+.destination-leftside{
+    width: 30%;
+}
+.destination-rightside{
+width: 70%;
+}
+.destination-post-img{
+    border-radius: 8px;
+    object-fit: cover;
+    width: 270px;
+    height: 210px;
+
+}
+.destination-post{
+    border-radius: 8px;
+    padding: 30px;
+    border: 1px solid hsla(0, 0%, 0%,13%);
+}
+.line{
+    border: 1px solid hsla(0, 0%, 0%,13%);
+    height: 1px;
+    width: 100%;
+}
+.destination-year{
+    width: 50%;
+
+}

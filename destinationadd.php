@@ -14,10 +14,13 @@ if(isset($_GET["btndesdelete"])){
       echo "Error deleting record: " .$conn->error;
     }
   }
-$id=$title=$category=$excerpt=$image="";
+$id=$title=$excerpt=$image="";
 if(isset($_POST["destination_button"])) {
     $title=$_POST['destination_title'];
-    $category=$_POST['destination_category'];
+    $cat_name= $_POST['select-category'];
+    if($cat_name=="ktm"){
+        $cat_id =  2;
+    }
     $excerpt=isset($_POST['destination_excerpt'])?$_POST['destination_excerpt']:'';
     if(isset($_FILES ['image'])){
         $folder='test/';
@@ -30,7 +33,7 @@ if(isset($_POST["destination_button"])) {
             $image=$image_file_name;
         }
     }
-    $query="INSERT INTO destination(title,category,excerpt,image) VALUES ('$title','$category' ,'$excerpt' ,'$image')";
+    $query="INSERT INTO destination(title,excerpt,des_cat_id,image) VALUES ('$title' ,'$excerpt','$cat_id' ,'$image')";
     if(mysqli_query($conn,$query)){
 
         echo "data saved";
@@ -39,7 +42,29 @@ if(isset($_POST["destination_button"])) {
 else{
     echo "data save failed: " .mysqli_error($conn);
 }
+
 ?>
+<?php
+if(isset($_POST['category-button'])){
+    $category_name= $_POST['category-name'];
+    $query="INSERT INTO category(category_title) VALUES ('$category_name')";
+    if(mysqli_query($conn,$query)){
+
+        echo "data saved";
+    }
+}
+else{
+    echo "data save failed: " .mysqli_error($conn);
+
+}
+
+
+?>
+<form method= "POST" style="margin-bottom:100px;">
+<label>Category name</label><br>
+<input type="text" name="category-name"><br>
+<input type="submit" name="category-button" value="submit">
+</form>
 
 <form method="POST" enctype="multipart/form-data">
     <label>Title:
@@ -51,12 +76,14 @@ else{
     </label>
     <label>
         Category:
-        <input type="text" name="destination_category">
-    </label>
+        <select name="select-category">
+            <option value="" name="ktm">ktm</option>
+            <option value="" name="pkr">pkr</option>
     <label>
         image:
         <input type="file" name="image">
     </label>
+
     <button name="destination_button">Insert</button>
 </form>
 <div class="fetch">
@@ -75,7 +102,7 @@ else{
             echo '<tr>
             <td><img src="test/' . $row['image'] . '"></td>
             <td>' .$row['title'].'</td>
-            <td>' .$row['category'].'</td>
+            <td>' .$row['des_cat_id'].'</td>
             <td> '.$row['excerpt'].'</td>
             <td> <a href="editdes.php ?id=' .$row['id'].'"<button class="btndesedit">EDIT</button>
             <td>
